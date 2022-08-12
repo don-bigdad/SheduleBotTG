@@ -5,7 +5,6 @@ today = calendar.day_name[datetime.date.today().weekday()]
 
 app = Flask(__name__)
 TOKEN = os.environ.get("TOKEN")
-TOKEN = "5482645165:AAFjvVK7cDisi-0JUgb_J6Pl3tE-o5ZJTts"
 bot = telebot.TeleBot(TOKEN)
 
 
