@@ -1,7 +1,7 @@
 from flask import Flask, request
 import datetime, calendar, telebot, os
 
-today = calendar.day_name[datetime.date.today().weekday()]
+
 
 app = Flask(__name__)
 TOKEN = os.environ.get("TOKEN")
@@ -10,6 +10,7 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler()
 def shedule_message(message):
+    today = calendar.day_name[datetime.date.today().weekday()]
     if message.text == "start/" or message.text == "Расписание" or message.text == "расписание":
         with open("Shedule.txt", "r", encoding="UTF-8") as file:
             for elem in file:
