@@ -24,7 +24,7 @@ def shedule_message(message):
 
 
 
-app.route("/"+TOKEN,method=["POST"])
+@app.route("/"+TOKEN,method=["POST"])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "Bot on Python",200
@@ -32,7 +32,7 @@ def get_message():
 @app.route("/")
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url="https://dashboard.heroku.com/apps"+TOKEN)
+    bot.set_webhook(url="https://shedulebottelegram.herokuapp.com/"+TOKEN)
     return "Bot on Python",200
 
 if __name__=="__main__":
