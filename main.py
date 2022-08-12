@@ -22,8 +22,6 @@ def shedule_message(message):
 
 
 
-
-
 @app.route("/"+TOKEN,method=["POST"])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
