@@ -5,6 +5,7 @@ today = calendar.day_name[datetime.date.today().weekday()]
 
 app = Flask(__name__)
 TOKEN = os.environ.get("TOKEN")
+TOKEN = "5482645165:AAFjvVK7cDisi-0JUgb_J6Pl3tE-o5ZJTts"
 bot = telebot.TeleBot(TOKEN)
 
 
@@ -21,7 +22,7 @@ def shedule_message(message):
         bot.send_message(message.chat.id, f'Я умею только выводить расписание на сегодня 😥')
 
 
-@app.route("/" + TOKEN, method=["POST"])
+@app.route("/" + TOKEN, methods=["POST"])
 def get_message():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "Bot on Python", 200
