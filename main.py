@@ -30,7 +30,7 @@ def get_message():
 @app.route("/")
 def main():
     bot.remove_webhook()
-    bot.set_webhook(url="https://shedulebottelegram.herokuapp.com/" + TOKEN)
+    bot.set_webhook(url="https://shedulebottg.herokuapp.com/" + TOKEN)
     return "Bot on Python", 200
 
 
