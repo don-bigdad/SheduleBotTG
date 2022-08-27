@@ -11,7 +11,7 @@ bot = telebot.TeleBot(TOKEN)
 @bot.message_handler()
 def shedule_message(message):
     today = calendar.day_name[datetime.date.today().weekday()]
-    if message.text == "start/" or message.text == "Расписание" or message.text == "расписание":
+    if message.text == "start/" or message.text == "Расписание" or message.text == "расписание" or message.text == "пары"or message.text == "Пары":
         with open("Shedule.txt", "r", encoding="UTF-8") as file:
             for elem in file:
                 if elem.split(":")[0] == today:
